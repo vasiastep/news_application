@@ -3,7 +3,7 @@ import {newsModal} from './modal'
 export function getNews(options){
 
     const apiKey = 'apiKey=81c722ace915430da7076695afd718f0';
-    const mainUrl = 'http://newsapi.org/v2/top-headlines?';
+    const mainUrl = 'https://newsapi.org/v2/top-headlines?';
     const newContentBlock = document.createElement('div');
     newContentBlock.setAttribute('id', 'news-content-block');
     document.body.append( newContentBlock );
