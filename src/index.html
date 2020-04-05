@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NEWS PROvider</title>
+    <link rel="icon" href="./images/favicon.png" type="image/ico">
+</head>
+<body>
+    <header>
+        <div class="main-header">
+            <div class="header-background"></div>
+            <div class="main-header-content">
+                <h1 class="main-header-content-title">NEWS PROvider</h1>
+                <p class="main-header-content-paragraph">Fresh and best for you</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="explain-block">
+            <p class="explain-block-paragraph">
+                Enter, please, any of the next fields and get to know the latest news from the world.
+            </p>
+        </div>
+
+        <form class="inputs">
+            <div class="floating">
+                <input id="key_word-input" class="floating__input" placeholder="Word or phrase" />
+                <label for="key_word-input" class="floating__label" data-content="Word or phrase">
+            </div>
+            <div class="floating">
+                <input id="country-input" class="floating__input" placeholder="Country" />
+                <label for="country-input" class="floating__label" data-content="Country (code)"></label>
+                
+                <div class="menu" >
+                    <div class="menu_choose language_menu">
+                        <p class="menu_choose_item" id="ua">Default: Ukraine</p>
+                        <hr>
+                        <p class="menu_choose_item" id="ru">Russia</p>
+                        <hr>
+                        <p class="menu_choose_item" id="us">USA</p>
+                        <hr>
+                        <p class="menu_choose_item" id="it">Italy</p>
+                        <hr>
+                        <p class="menu_choose_item" id="de">Germany</p>
+                        <hr>
+                        <p class="menu_choose_item" id="pl">Poland</p>
+                        <hr>
+                        <p class="menu_choose_item" id="gb">UK Great Britain</p>
+                        <hr>
+                        <p class="menu_choose_item" id="cn">China</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="floating">
+                <input id="category-input" class="floating__input" placeholder="Category" />
+                <label for="category-input" class="floating__label" data-content="Category"></label>
+
+                <div class="menu">
+                    <div class="menu_choose category_menu">
+                        <p class="menu_choose_item">general</p>
+                        <hr>
+                        <p class="menu_choose_item">technology</p>
+                        <hr>
+                        <p class="menu_choose_item">business</p>
+                        <hr>
+                        <p class="menu_choose_item">science</p>
+                        <hr>
+                        <p class="menu_choose_item">sports</p>
+                        <hr>
+                        <p class="menu_choose_item">entertainment</p>
+                        <hr>
+                        <p class="menu_choose_item">health</p>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <button id="submit-btn" class="submit-button">
+                OK
+            </button>
+        </form>
+    </main>
+
+
+</body>
+</html>

@@ -1,0 +1,172 @@
+@import '../fonts/fonts';
+@import './input';
+@import './modal';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.main-header{
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+
+  .header-background{
+    position: absolute;
+    top: 0;left: 0;bottom: 0;right: 0;
+    background: url('../images/header.jpg') no-repeat 50% 50%;
+    transition: 0.5s ease all;
+    background-size: cover;
+  }
+
+  &::before{
+    content: '';
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    background-color: rgba(20, 39, 41, .6);
+    z-index: 5;
+  }
+
+  &-content{
+    z-index: 10;
+    color: whitesmoke;
+    position: relative;
+
+    &-title{
+      font-family: 'Prata';
+      margin-bottom: 1rem;
+    }
+
+    &-paragraph{
+      font-family: 'Playball';
+      font-size: 20px;
+    }
+  }
+    
+  &:hover{
+    .header-background{
+      transform: scale(1.05);
+    }
+  }
+}
+
+
+// Main part
+.explain-block{
+  margin: 2rem 0 2rem 2rem;
+
+  p {
+    font-family: 'Raleway';
+    font-size: 18px;
+  }
+}
+
+.inputs{
+  margin: 2rem 4rem 2rem 2rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.submit-button{
+  padding: 1.2rem;
+  border: none;
+  background-color: #418856;
+  cursor: pointer;
+  border-radius: 50%;
+  color: whitesmoke;
+
+  &:disabled{
+    background-color: #59b475;
+  }
+}
+
+
+// News content
+#news-content-block{
+  margin-left: 2rem;
+  margin-right: 2rem;
+  cursor: pointer;
+  font-family: 'Raleway';
+}
+.news-content-block-not-flex{
+  padding: 1rem 0;
+
+  &:hover{
+    background-color: rgba(0, 0, 0, 0.151);
+    transition: 0.3s ease all;
+  }
+}
+.news-content-block-flex{
+  display: flex;
+
+
+
+  &-main-body{
+    padding-left: 30px;
+  }
+}
+.block-grey-bg{
+  background-color: rgba(0, 0, 0, 0.096);
+}
+
+// Modal content
+.modal-news-img-and-title {
+  padding-left: 1rem;
+
+  .modal-news-title{
+    font-family: 'PlayFair';
+  }
+
+  .modal-news-img {
+    padding: 1rem 0 1rem 0 ;
+    width: 100%;
+    height: auto;
+  }
+}
+.modal-news-main-body{
+  padding-left: 1rem;
+  font-family: 'OldStandard';
+  font-size: 1.2em;
+}
+.modal-news-link{
+  margin-top: 1rem;
+
+  &-target{
+    text-decoration: none;
+    position: relative;
+
+    &::before{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      transition: .2s;
+      transform: scaleX(0);
+      background-color: #0D0DEF;
+    }
+
+    &:hover:before{
+      transform: scaleX(1);
+    }
+
+  }
+}
+
+// Error modal
+.error_text{
+  padding: 1rem 1rem;
+
+  &_par{
+    margin: 0.5rem;
+    font-family: 'Raleway';
+    font-size: 20px;
+  }
+}
