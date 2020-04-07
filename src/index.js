@@ -53,7 +53,6 @@ function getNewsAndShowModal() {
 
     submitBtn.disabled = true;
 
-    // console.log( submitBtn.style );
     const requestOptions = {
         keyWord: '', 
         country: 'country=ua&', 

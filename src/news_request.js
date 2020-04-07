@@ -20,12 +20,12 @@ export function getNews(options){
             title: 'Ooppss...',
             content: `<div class="error_text">
                 <p class="error_text_par">Try to write country properly</p>
-                <p class="error_text_par"><b>Format:</b> Country (country code) <b>or</b> (ua)</p>
+                <p class="error_text_par"><b>Format:</b> Country (country code) <b>or</b> (country code)</p>
                 <p class="error_text_par"><b>For example:</b> Ukraine (ua) <b>or</b> (ua)</p></div>`,
             closable: true
         };
-        const newsModalBlock = newsModal.modal(options);
-        newsModalBlock.open();
+        const countryErrorModal = newsModal.modal(options);
+        countryErrorModal.open();
     }
     if(document.getElementById('category-input').value){
         options.category = `category=${document.getElementById('category-input').value}&`;
@@ -33,18 +33,26 @@ export function getNews(options){
 
     return fetch(`${mainUrl}${options.country}${options.keyWord}${options.category}${apiKey}`)
         .then(response => response.json())
-        .catch(response => {
-            if(response.articles.length === 0){
-                newContentBlock.innerHTML = `Can't find any information`;
-            }
-        })
         .then(response => {
+
+            
+
+            if(response.totalResults == 0){
+                let options = {
+                    title: 'Ooppss...',
+                    content: `<div class="error_text">
+                        <p class="error_text_par">Can not find any results</p>`,
+                    closable: true
+                };
+                const resultErrorModal = newsModal.modal(options);
+                resultErrorModal.open();
+            }
+
             let tempId = 0;
             response.articles.map(elem => {
                 elem.id = tempId++;
             });
 
-            newContentBlock.innerHTML = '';
             newContentBlock.innerHTML = response.articles.map(configNewsBlocks).join('');
 
             for(let i=1; i < newContentBlock.children.length; i += 4){
@@ -56,7 +64,6 @@ export function getNews(options){
 }
 
 function configNewsBlocks(newsElement){
-    console.log(  );
     return  `
         <hr>
         <div class="news-content-block-not-flex" data-id="${newsElement.id}">
