@@ -3,6 +3,7 @@ import {newsModal} from './modal'
 export function getNews(options){
 
     const apiKey = 'apiKey=81c722ace915430da7076695afd718f0';
+    const proxy = 'https://cors-anywhere.herokuapp.com/'
     const mainUrl = 'https://newsapi.org/v2/top-headlines?';
     const newContentBlock = document.createElement('div');
     newContentBlock.setAttribute('id', 'news-content-block');
@@ -31,7 +32,7 @@ export function getNews(options){
         options.category = `category=${document.getElementById('category-input').value}&`;
     }
 
-    return fetch(`${mainUrl}${options.country}${options.keyWord}${options.category}${apiKey}`)
+    return fetch(proxy + `${mainUrl}${options.country}${options.keyWord}${options.category}${apiKey}`)
         .then(response => response.json())
         .then(response => {
 
